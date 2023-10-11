@@ -3,7 +3,15 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-  @tasks = params[:sort_by_due_date] ? Task.order(due_date: :asc) : Task.all
+  if params[:sort_by] == 'due_date'
+    @tasks = Task.order(due_date: :asc)
+  elsif params[:sort_by] == 'name'
+    @tasks = Task.order(name: :asc)
+  elsif params[:sort_by] == 'created_at'
+    @tasks = Task.order(created_at: :asc)
+  else
+    @tasks = Task.all
+  end
 end
 
   # GET /tasks/1 or /tasks/1.json
