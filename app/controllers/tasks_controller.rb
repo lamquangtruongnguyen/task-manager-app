@@ -3,8 +3,8 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
-  end
+  @tasks = params[:sort_by_due_date] ? Task.order(due_date: :asc) : Task.all
+end
 
   # GET /tasks/1 or /tasks/1.json
   def show
@@ -67,4 +67,7 @@ class TasksController < ApplicationController
     def task_params
       params.require(:task).permit(:name, :category, :description, :due_date, :is_complete)
     end
+
+
+
 end
