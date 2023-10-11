@@ -3,8 +3,16 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
+  if params[:sort_by] == 'due_date'
+    @tasks = Task.order(due_date: :asc)
+  elsif params[:sort_by] == 'name'
+    @tasks = Task.order(name: :asc)
+  elsif params[:sort_by] == 'created_at'
+    @tasks = Task.order(created_at: :asc)
+  else
     @tasks = Task.all
   end
+end
 
   # GET /tasks/1 or /tasks/1.json
   def show
@@ -67,4 +75,7 @@ class TasksController < ApplicationController
     def task_params
       params.require(:task).permit(:name, :category, :description, :due_date, :is_complete)
     end
+
+
+
 end
