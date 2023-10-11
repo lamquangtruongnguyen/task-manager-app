@@ -19,7 +19,7 @@
 
     <div>
       <%= form.label :category, style: "display: block" %>
-      <%= form.text_field :category %>
+      <%= form.select :category, ['Work','Personal'] %>
     </div>
 
     <div>
@@ -31,12 +31,12 @@
       <%= form.label :due_date, style: "display: block" %>
       <%= form.date_field :due_date %>
     </div>
-
+    <!--
     <div>
       <%= form.label :is_complete, style: "display: block" %>
       <%= form.check_box :is_complete %>
     </div>
-
+    -->
     <div>
       <%= form.submit %>
     </div>
