@@ -20,7 +20,9 @@
   </td>
 
   <td>
-    <%= task.is_complete ? 'Complete' : 'Incomplete' %>
+    <p class="status <%= task.is_complete ? 'complete' : 'incomplete' %>">
+      <%= task.is_complete ? 'Complete' : 'Incomplete' %>
+    </p>
   </td>
 
   <td>
