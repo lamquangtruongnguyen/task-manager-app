@@ -1,32 +1,33 @@
-<div id="<%= dom_id task %>" class="task">
-  <p>
-    <strong>Created on:</strong>
+<tr id="<%= dom_id task %>" class="task">
+  <td>
     <%= task.created_at.strftime("%m-%d-%Y") %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Name:</strong>
+  <td>
     <%= task.name %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Category:</strong>
+  <td>
     <%= task.category %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Description:</strong>
+  <td>
     <%= task.description %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Due date:</strong>
+  <td>
     <%= task.due_date %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Done:</strong>
-    <%= task.is_complete ? 'Yes' : 'No' %>
-  </p>
+  <td>
+    <%= task.is_complete ? 'Complete' : 'Incomplete' %>
+  </td>
 
-</div>
+  <td>
+    <btn class="btn">
+      <%= link_to "Show this task", task %>
+    </btn>
+  </td>
+
+
+</tr>

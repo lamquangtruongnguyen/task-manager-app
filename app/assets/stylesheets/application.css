@@ -13,34 +13,121 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-body {
-  margin: 0;
+* {
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  width: 90%;
+  display: flex;
+  justify-content: center;
 }
 
 .tasks-list {
-
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.task {
+.tasks-list .header {
+  text-align: center;
+  margin: 40px 0 20px 0;
+  color: #9A4444;
+}
 
+.tasks-list .option {
+  margin: 20px 0 60px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tasks-list .option .btn {
+  margin: 0 10px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tasks-list #tasks {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.tasks-list #tasks th {
+  background-color: #9A4444;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.tasks-list #tasks tbody td {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.tasks-list #tasks thead th:first-child,
+.tasks-list #tasks tbody td:first-child {
+  min-width: 130px;
+}
+
+.tasks-list #tasks thead th:nth-child(2),
+.tasks-list #tasks tbody td:nth-child(2) {
+  min-width: 200px;
+  font-weight: bold;
+}
+
+.tasks-list #tasks thead th:nth-child(3),
+.tasks-list #tasks tbody td:nth-child(3) {
+  min-width: 90px;
+}
+
+.tasks-list #tasks thead th:nth-child(4),
+.tasks-list #tasks tbody td:nth-child(4) {
+  min-width: 300px;
+}
+
+.tasks-list #tasks thead th:nth-child(5),
+.tasks-list #tasks tbody td:nth-child(5) {
+  min-width: 130px;
+}
+
+.tasks-list #tasks thead th:nth-child(6),
+.tasks-list #tasks tbody td:nth-child(6) {
+  min-width: 100px;
+}
+
+.tasks-list #tasks thead th:nth-child(7),
+.tasks-list #tasks tbody td:nth-child(7) {
+  min-width: 200px;
+}
+
+.tasks-list #tasks tbody tr:nth-of-type(even) {
+  background-color: #F4DFB6;
+}
+
+.tasks-list #tasks tbody tr:nth-of-type(odd) {
+  background-color: #DE8F5F;
 }
 
 .form-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  font-size: 18px;
+  width: 100%;
+  background: red;
+  padding: 40px 20px 20px 20px;
+  text-align: center;
 }
 
 .form-container h1 {
-  margin: 0;
-  padding: 20px;
+  color: #9A4444;
+  margin-bottom: 20px;
 }
 
 .form-container a {
@@ -54,11 +141,36 @@ body {
 
 }
 
-.form input[type="submit"] {
+.form input[type="submit"], .btn {
   border-radius: 10px;
-  background-color: #cbf3f0;
+  background-color: #D6D46D;
   border: none;
   padding: 10px 20px;
   font-weight: 500;
   font-size: 16px;
+  transition: 0.3s;
+  color: black;
+}
+
+.form input[type="submit"]:hover, .btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+
+.btn a {
+  text-decoration: none;
+  color: #9A4444;
+}
+
+@media (max-width: 767px) {
+  body {
+    width: 95%;
+  }
+  .tasks-list .option {
+    flex-direction: column;
+  }
+  .tasks-list .option .btn {
+    margin: 10px;
+  }
 }
