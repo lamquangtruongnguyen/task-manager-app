@@ -28,7 +28,7 @@ body {
   justify-content: center;
 }
 
-.tasks-list {
+.tasks-list, .task-single {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -56,12 +56,12 @@ body {
   overflow-x: auto;
 }
 
-.tasks-list #tasks {
+.tasks-list #tasks, table {
   table-layout: fixed;
   border-collapse: collapse;
 }
 
-.tasks-list #tasks th {
+th {
   background-color: #9A4444;
   color: #fff;
   padding: 20px 0;
@@ -69,56 +69,62 @@ body {
   text-transform: uppercase;
 }
 
-.tasks-list #tasks tbody td {
+tbody td {
   padding: 20px 0;
   text-align: center;
 }
 
-.tasks-list #tasks thead th:first-child,
-.tasks-list #tasks tbody td:first-child {
+thead th:first-child,
+tbody td:first-child {
   min-width: 130px;
 }
 
-.tasks-list #tasks thead th:nth-child(2),
-.tasks-list #tasks tbody td:nth-child(2) {
+thead th:nth-child(2),
+tbody td:nth-child(2) {
   min-width: 200px;
   font-weight: bold;
 }
 
-.tasks-list #tasks thead th:nth-child(3),
-.tasks-list #tasks tbody td:nth-child(3) {
+thead th:nth-child(3),
+tbody td:nth-child(3) {
   min-width: 90px;
 }
 
-.tasks-list #tasks thead th:nth-child(4),
-.tasks-list #tasks tbody td:nth-child(4) {
+thead th:nth-child(4),
+tbody td:nth-child(4) {
   min-width: 300px;
 }
 
-.tasks-list #tasks thead th:nth-child(5),
-.tasks-list #tasks tbody td:nth-child(5) {
+thead th:nth-child(5),
+tbody td:nth-child(5) {
   min-width: 130px;
 }
 
-.tasks-list #tasks thead th:nth-child(6),
-.tasks-list #tasks tbody td:nth-child(6) {
+thead th:nth-child(6),
+tbody td:nth-child(6) {
   min-width: 100px;
+  padding: 0 20px;
 }
 
-.tasks-list #tasks thead th:nth-child(7),
-.tasks-list #tasks tbody td:nth-child(7) {
+thead th:nth-child(7),
+tbody td:nth-child(7) {
   min-width: 200px;
 }
 
-.tasks-list #tasks tbody tr:nth-of-type(even) {
+thead th:nth-child(8),
+tbody td:nth-child(8) {
+  min-width: 150px;
+}
+
+tbody tr:nth-of-type(even) {
   background-color: #F4DFB6;
 }
 
-.tasks-list #tasks tbody tr:nth-of-type(odd) {
+tbody tr:nth-of-type(odd) {
   background-color: #DE8F5F;
 }
 
-.tasks-list #tasks .status {
+.status {
   color: white;
   padding: 5px 10px;
   border-radius: 20px;
@@ -176,6 +182,10 @@ body {
 .btn a {
   text-decoration: none;
   color: #9A4444;
+}
+
+.task-single {
+  margin-top: 40px;
 }
 
 @media (max-width: 767px) {

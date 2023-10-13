@@ -24,11 +24,21 @@
       <%= task.is_complete ? 'Complete' : 'Incomplete' %>
     </p>
   </td>
-
+  <!--
   <td>
     <btn class="btn">
       <%= link_to "Show this task", task %>
     </btn>
+  </td>
+  -->
+  <td>
+    <button class="btn">
+      <%= link_to "Edit task", edit_task_path(task) %>
+    </button>
+  </td>
+
+  <td>
+      <%= button_to "Destroy this task", task, method: :delete %>
   </td>
 
 
