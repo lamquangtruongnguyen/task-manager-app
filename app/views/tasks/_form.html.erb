@@ -12,33 +12,34 @@
   <% end %>
 
   <div class="form">
-    <div>
-      <%= form.label :name, style: "display: block" %>
+    <div class="form-control">
+      <%= form.label :name %>
       <%= form.text_field :name %>
     </div>
 
-    <div>
-      <%= form.label :category, style: "display: block" %>
+    <div class="form-control">
+      <%= form.label :category %>
       <%= form.select :category, ['Work','Personal'] %>
     </div>
 
-    <div>
-      <%= form.label :description, style: "display: block" %>
+    <div class="form-control">
+      <%= form.label :description %>
       <%= form.text_area :description %>
     </div>
 
-    <div>
-      <%= form.label :due_date, style: "display: block" %>
+    <div class="form-control">
+      <%= form.label :due_date %>
       <%= form.date_field :due_date %>
     </div>
 
-    <div>
-      <%= form.label :is_complete, style: "display: block" %>
-      <%= form.check_box :is_complete %>
+    <div style="margin-top: 40px; text-align: center">
+      <%= form.submit %>
+      <button class="btn" style="margin-left: 15px; width: 150px">
+        <%= link_to "Back to tasks", tasks_path %>
+      </button>
     </div>
 
-    <div>
-      <%= form.submit %>
-    </div>
+
+
   </div>
 <% end %>

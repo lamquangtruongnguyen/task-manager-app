@@ -28,11 +28,15 @@ body {
   justify-content: center;
 }
 
-.tasks-list {
+.tasks-list, .task-single {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.tasks-list, .task-single {
+  margin-top: 100px;
 }
 
 .tasks-list .header {
@@ -56,12 +60,12 @@ body {
   overflow-x: auto;
 }
 
-.tasks-list #tasks {
+table {
   table-layout: fixed;
   border-collapse: collapse;
 }
 
-.tasks-list #tasks th {
+th {
   background-color: #9A4444;
   color: #fff;
   padding: 20px 0;
@@ -69,56 +73,66 @@ body {
   text-transform: uppercase;
 }
 
-.tasks-list #tasks tbody td {
+td {
   padding: 20px 0;
   text-align: center;
 }
 
-.tasks-list #tasks thead th:first-child,
-.tasks-list #tasks tbody td:first-child {
+thead th:first-child,
+tbody td:first-child {
   min-width: 130px;
 }
 
-.tasks-list #tasks thead th:nth-child(2),
-.tasks-list #tasks tbody td:nth-child(2) {
+thead th:nth-child(2),
+tbody td:nth-child(2) {
   min-width: 200px;
   font-weight: bold;
 }
 
-.tasks-list #tasks thead th:nth-child(3),
-.tasks-list #tasks tbody td:nth-child(3) {
+thead th:nth-child(3),
+tbody td:nth-child(3) {
   min-width: 90px;
 }
 
-.tasks-list #tasks thead th:nth-child(4),
-.tasks-list #tasks tbody td:nth-child(4) {
+thead th:nth-child(4),
+tbody td:nth-child(4) {
   min-width: 300px;
 }
 
-.tasks-list #tasks thead th:nth-child(5),
-.tasks-list #tasks tbody td:nth-child(5) {
+thead th:nth-child(5),
+tbody td:nth-child(5) {
   min-width: 130px;
 }
 
-.tasks-list #tasks thead th:nth-child(6),
-.tasks-list #tasks tbody td:nth-child(6) {
+thead th:nth-child(6),
+tbody td:nth-child(6) {
   min-width: 100px;
 }
 
-.tasks-list #tasks thead th:nth-child(7),
-.tasks-list #tasks tbody td:nth-child(7) {
-  min-width: 200px;
+thead th:nth-child(7),
+tbody td:nth-child(7) {
+  min-width: 100px;
 }
 
-.tasks-list #tasks tbody tr:nth-of-type(even) {
+thead th:nth-child(8),
+tbody td:nth-child(8) {
+  min-width: 150px;
+}
+
+thead th:nth-child(9),
+tbody td:nth-child(9) {
+  min-width: 150px;
+}
+
+tbody tr:nth-of-type(even) {
   background-color: #F4DFB6;
 }
 
-.tasks-list #tasks tbody tr:nth-of-type(odd) {
+tbody tr:nth-of-type(odd) {
   background-color: #DE8F5F;
 }
 
-.tasks-list #tasks .status {
+.status {
   color: white;
   padding: 5px 10px;
   border-radius: 20px;
@@ -135,9 +149,12 @@ body {
 
 .form-container {
   width: 100%;
-  background: red;
-  padding: 40px 20px 20px 20px;
+  padding: 100px 20px 20px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-container h1 {
@@ -153,10 +170,39 @@ body {
 }
 
 .form {
-
+  text-align: left;
+  padding: 50px 100px;
+  border-radius: 30px;
+  background-color: #F4DFB6;
 }
 
-.form input[type="submit"], .btn {
+.form .form-control {
+  margin: 20px 0;
+}
+
+.form label {
+  display: inline-block;
+  width: 100px;
+}
+
+.form input, .form select, .form textarea {
+  border: none;
+  border-radius: 10px;
+  background-color: #DE8F5F;
+  padding: 10px 20px;
+  width: 300px;
+  font-size: 16px;
+}
+
+.form textarea {
+  height: 100px;
+}
+
+.form input:focus {
+  border: 1px solid black;
+}
+
+.form input[type="submit"], .btn, button {
   border-radius: 10px;
   background-color: #D6D46D;
   border: none;
@@ -167,13 +213,17 @@ body {
   color: black;
 }
 
-.form input[type="submit"]:hover, .btn:hover {
+.form input[type="submit"]:hover, .btn:hover, button:hover, .dropbtn:focus {
   opacity: 0.8;
   cursor: pointer;
 }
 
+.form input[type="submit"] {
+  width: 150px;
+}
 
 .btn a {
+  margin-top: 0;
   text-decoration: none;
   color: #9A4444;
 }
@@ -188,23 +238,6 @@ body {
   .tasks-list .option .btn {
     margin: 10px;
   }
-}
-
-.dropbtn {
-  border-radius: 10px;
-  background-color: #D6D46D;
-  text-decoration: none;
-  color: #9A4444;
-  border: none;
-  padding: 10px 20px;
-  font-weight: 500;
-  transition: 0.3s;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
 }
 
 .dropdown {

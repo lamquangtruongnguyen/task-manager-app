@@ -3,7 +3,7 @@
     <%= task.created_at.strftime("%m-%d-%Y") %>
   </td>
 
-  <td>
+  <td style="<%= task.is_complete ? 'text-decoration: line-through' : '' %>">
     <%= task.name %>
   </td>
 
@@ -31,6 +31,16 @@
     </btn>
   </td>
   -->
+
+
+  <td>
+    <div style="<%= task.is_complete ? 'visibility: hidden' : 'visibility: visible' %>">
+      <%= form_with(model: task) do |form| %>
+      <%= form.check_box :is_complete, {onchange: "this.form.submit();"} %>
+      <% end %>
+    </div>
+  </td>
+
   <td>
     <button class="btn">
       <%= link_to "Edit", edit_task_path(task) %>
@@ -40,12 +50,5 @@
   <td>
       <%= button_to "Delete", task, method: :delete %>
   </td>
-
-  <td>
-    <%= form_with(model: task) do |form| %>
-    <%= form.check_box :is_complete, {onchange: "this.form.submit();"} %>
-    <% end %>
-  </td>
-
 
 </tr>

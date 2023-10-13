@@ -12,6 +12,8 @@
           <th>Description</th>
           <th>Due Date</th>
           <th>Status</th>
+          <th>Mark Complete</th>
+          <th></th>
           <th></th>
         </tr>
       </thead>
@@ -28,7 +30,7 @@
     <div class="btn">
       <%= link_to "Back to tasks", tasks_path %>
     </div>
-    <%= button_to "Destroy this task", @task, method: :delete %>
+    <%= button_to "Delete", @task, method: :delete %>
   </div>
 
 </div>
