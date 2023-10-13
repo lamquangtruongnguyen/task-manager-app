@@ -33,12 +33,18 @@
   -->
   <td>
     <button class="btn">
-      <%= link_to "Edit task", edit_task_path(task) %>
+      <%= link_to "Edit", edit_task_path(task) %>
     </button>
   </td>
 
   <td>
-      <%= button_to "Destroy this task", task, method: :delete %>
+      <%= button_to "Delete", task, method: :delete %>
+  </td>
+
+  <td>
+    <%= form_with(model: task) do |form| %>
+    <%= form.check_box :is_complete, {onchange: "this.form.submit();"} %>
+    <% end %>
   </td>
 
 
