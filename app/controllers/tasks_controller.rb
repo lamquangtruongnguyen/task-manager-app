@@ -9,6 +9,8 @@ class TasksController < ApplicationController
     @tasks = Task.order(name: :asc)
   elsif params[:sort_by] == 'created_at'
     @tasks = Task.order(created_at: :asc)
+  elsif params[:sort_by] == 'category'
+    @tasks = Task.order(category: :asc)
   else
     @tasks = Task.all
   end
