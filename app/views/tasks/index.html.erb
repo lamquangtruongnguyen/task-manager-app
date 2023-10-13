@@ -1,48 +1,88 @@
-<div class="tasks-list">
+<!DOCTYPE html>
+<html lang="en">
 
-  <div>
-    <p style="color: green"><%= notice %></p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager App</title>
+  <link rel="stylesheet" href="application.css">
+
+</head>
+
+<body>
+
+  <div class="tasks-list">
+    <div>
+      <p style="color: green"><%= notice %></p>
+    </div>
+
+    <h1 class="header">Task Manager App</h1>
+
+    <div class="option">
+      <button class="btn" type="button">
+        <%= link_to "New Task", new_task_path %>
+      </button>
+
+      <div class="dropdown">
+        <button onclick="dropping()" class="dropbtn">Sort</button>
+        <div id="myDropdown" class="dropdown-content">
+          <div class="sort-option">
+            <%= link_to 'Sort by Due Date', tasks_path(sort_by: 'due_date'), id: 'sortDueDateButton' %>
+          </div>
+          <div class="sort-option">
+            <%= link_to 'Sort by Name', tasks_path(sort_by: 'name'), id: 'sortNameButton' %>
+          </div>
+          <div class="sort-option">
+            <%= link_to 'Sort by Created Date', tasks_path(sort_by: 'created_at'), id: 'sortCreatedAtButton' %>
+          </div>
+          <div class="sort-option">
+            <%= link_to 'Sort by Category', tasks_path(sort_by: 'category'), id: 'sortCategoryButton' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table id="tasks">
+        <thead>
+          <tr>
+            <th>Created On</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tasks.each do |task| %>
+            <%= render task %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <h1 class="header">Task Manager App</h1>
+  <script>
+    function dropping() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
 
-  <div class="option">
-    <button class="btn" type="button">
-      <%= link_to "New Task", new_task_path %>
-    </button>
-    <button class="btn" type="button">
-    <%= link_to 'Sort by Due Date', tasks_path(sort_by: 'due_date'), id: 'sortDueDateButton' %>
-    </button>
-    <button class="btn" type="button">
-      <%= link_to 'Sort by Name', tasks_path(sort_by: 'name'), id: 'sortNameButton' %>
-    </button>
-    <button class="btn" type="button">
-      <%= link_to 'Sort by Created Date', tasks_path(sort_by: 'created_at'), id: 'sortCreatedAtButton' %>
-    </button>
-    <button class="btn" type="button">
-      <%= link_to 'Sort by Category', tasks_path(sort_by: 'category'), id: 'sortCategoryButton' %>
-    </button>
-  </div>
-  <div class="table-wrapper">
-    <table id="tasks">
-    <thead>
-      <tr>
-        <th>Created On</th>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Description</th>
-        <th>Due Date</th>
-        <th>Status</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @tasks.each do |task| %>
-        <%= render task %>
-      <% end %>
-    </tbody>
-    </table>
-  </div>
-</div>
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>
