@@ -23,14 +23,10 @@
     </table>
   </div>
 
-  <div>
-    <div class="btn">
-      <%= link_to "Edit this task", edit_task_path(@task) %>
-    </div>
-    <div class="btn">
+  <div >
+    <div class="btn" style="margin-top: 40px">
       <%= link_to "Back to tasks", tasks_path %>
     </div>
-    <%= button_to "Delete", @task, method: :delete %>
   </div>
 
 </div>

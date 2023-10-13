@@ -211,6 +211,7 @@ tbody tr:nth-of-type(odd) {
   font-size: 16px;
   transition: 0.3s;
   color: black;
+  width: 120px;
 }
 
 .form input[type="submit"]:hover, .btn:hover, button:hover, .dropbtn:focus {
