@@ -1,0 +1,45 @@
+<%= form_with(model: task) do |form| %>
+  <% if task.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form">
+    <div class="form-control">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="form-control">
+      <%= form.label :category %>
+      <%= form.select :category, ['Work','Personal'] %>
+    </div>
+
+    <div class="form-control">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div class="form-control">
+      <%= form.label :due_date %>
+      <%= form.date_field :due_date %>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center">
+      <%= form.submit %>
+      <button class="btn" style="margin-left: 15px; width: 150px">
+        <%= link_to "Back to tasks", tasks_path %>
+      </button>
+    </div>
+
+
+
+  </div>
+<% end %>

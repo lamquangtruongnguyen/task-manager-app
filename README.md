@@ -22,3 +22,15 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* Before running the app, delete the gemfile.lock, then do these:
+
+```bash
+bundle _2.3.14_ config set --local without 'production'
+bundle _2.3.14_ install
+bundle _2.3.14_ lock --add-platform x86_64-linux
+```
+
+```bash
+rails db:migrate
+```

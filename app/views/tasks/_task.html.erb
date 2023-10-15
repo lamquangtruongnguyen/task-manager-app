@@ -1,0 +1,54 @@
+<tr id="<%= dom_id task %>" class="task">
+  <td>
+    <%= task.created_at.strftime("%m-%d-%Y") %>
+  </td>
+
+  <td style="<%= task.is_complete ? 'text-decoration: line-through' : '' %>">
+    <%= task.name %>
+  </td>
+
+  <td>
+    <%= task.category %>
+  </td>
+
+  <td>
+    <%= task.description %>
+  </td>
+
+  <td>
+    <%= task.due_date.strftime("%m-%d-%Y") %>
+  </td>
+
+  <td>
+    <p class="status <%= task.is_complete ? 'complete' : 'incomplete' %>">
+      <%= task.is_complete ? 'Complete' : 'Incomplete' %>
+    </p>
+  </td>
+  <!--
+  <td>
+    <btn class="btn">
+      <%= link_to "Show this task", task %>
+    </btn>
+  </td>
+  -->
+
+
+  <td>
+    <div style="<%= task.is_complete ? 'visibility: hidden' : 'visibility: visible' %>">
+      <%= form_with(model: task) do |form| %>
+      <%= form.check_box :is_complete, {onchange: "this.form.submit();"} %>
+      <% end %>
+    </div>
+  </td>
+
+  <td>
+    <button class="btn">
+      <%= link_to "Edit", edit_task_path(task) %>
+    </button>
+  </td>
+
+  <td>
+      <%= button_to "Delete", task, method: :delete %>
+  </td>
+
+</tr>

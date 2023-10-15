@@ -13,3 +13,260 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.tasks-list, .task-single {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tasks-list, .task-single {
+  margin-top: 100px;
+}
+
+.tasks-list .header {
+  text-align: center;
+  margin: 40px 0 20px 0;
+  color: #9A4444;
+}
+
+.tasks-list .option {
+  margin: 20px 0 60px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tasks-list .option .btn {
+  margin: 0 10px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #9A4444;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 20px 0;
+  text-align: center;
+}
+
+thead th:first-child,
+tbody td:first-child {
+  min-width: 130px;
+}
+
+thead th:nth-child(2),
+tbody td:nth-child(2) {
+  min-width: 200px;
+  font-weight: bold;
+}
+
+thead th:nth-child(3),
+tbody td:nth-child(3) {
+  min-width: 90px;
+}
+
+thead th:nth-child(4),
+tbody td:nth-child(4) {
+  min-width: 300px;
+}
+
+thead th:nth-child(5),
+tbody td:nth-child(5) {
+  min-width: 130px;
+}
+
+thead th:nth-child(6),
+tbody td:nth-child(6) {
+  min-width: 100px;
+}
+
+thead th:nth-child(7),
+tbody td:nth-child(7) {
+  min-width: 100px;
+}
+
+thead th:nth-child(8),
+tbody td:nth-child(8) {
+  min-width: 150px;
+}
+
+thead th:nth-child(9),
+tbody td:nth-child(9) {
+  min-width: 150px;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #F4DFB6;
+}
+
+tbody tr:nth-of-type(odd) {
+  background-color: #DE8F5F;
+}
+
+.status {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  width: 100px;
+}
+
+.incomplete {
+  background-color: #dc3545;
+}
+
+.complete {
+  background-color: #28a745;
+}
+
+.form-container {
+  width: 100%;
+  padding: 100px 20px 20px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container h1 {
+  color: #9A4444;
+  margin-bottom: 20px;
+}
+
+.form-container a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-top: 15px;
+}
+
+.form {
+  text-align: left;
+  padding: 50px 100px;
+  border-radius: 30px;
+  background-color: #F4DFB6;
+}
+
+.form .form-control {
+  margin: 20px 0;
+}
+
+.form label {
+  display: inline-block;
+  width: 100px;
+}
+
+.form input, .form select, .form textarea {
+  border: none;
+  border-radius: 10px;
+  background-color: #DE8F5F;
+  padding: 10px 20px;
+  width: 300px;
+  font-size: 16px;
+}
+
+.form textarea {
+  height: 100px;
+}
+
+.form input:focus {
+  border: 1px solid black;
+}
+
+.form input[type="submit"], .btn, button {
+  border-radius: 10px;
+  background-color: #D6D46D;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+  color: black;
+  width: 120px;
+}
+
+.form input[type="submit"]:hover, .btn:hover, button:hover, .dropbtn:focus {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.form input[type="submit"] {
+  width: 150px;
+}
+
+.btn a {
+  margin-top: 0;
+  text-decoration: none;
+  color: #9A4444;
+}
+
+@media (max-width: 767px) {
+  body {
+    width: 95%;
+  }
+  .tasks-list .option {
+    flex-direction: column;
+  }
+  .tasks-list .option .btn {
+    margin: 10px;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.show {display:block;}
+
+.sort-option {
+  display: block;
+  margin-bottom: 10px;
+}

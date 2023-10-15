@@ -1,0 +1,32 @@
+<div class="task-single">
+
+  <p style="color: green"><%= notice %></p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Created On</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Mark Complete</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @task %>
+      </tbody>
+    </table>
+  </div>
+
+  <div >
+    <div class="btn" style="margin-top: 40px">
+      <%= link_to "Back to tasks", tasks_path %>
+    </div>
+  </div>
+
+</div>
