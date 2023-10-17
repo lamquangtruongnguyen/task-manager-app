@@ -2,19 +2,31 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
 
   # GET /tasks or /tasks.json
-  def index
-  if params[:sort_by] == 'due_date'
-    @tasks = Task.order(due_date: :asc)
-  elsif params[:sort_by] == 'name'
-    @tasks = Task.order(name: :asc)
-  elsif params[:sort_by] == 'created_at'
-    @tasks = Task.order(created_at: :asc)
-  elsif params[:sort_by] == 'category'
-    @tasks = Task.order(category: :asc)
-  else
+ def index
     @tasks = Task.all
+
+    if params[:complete].present?
+    @tasks = @tasks.where(is_complete: true)
   end
-end
+
+  if params[:incomplete].present?
+    @tasks = @tasks.where(is_complete: false)
+  end
+
+  if params[:category].present?
+    @tasks = @tasks.where(category: params[:category])
+  end
+
+    if params[:sort_by] == 'due_date'
+      @tasks = @tasks.order(due_date: :asc)
+    elsif params[:sort_by] == 'name'
+      @tasks = @tasks.order(name: :asc)
+    elsif params[:sort_by] == 'created_at'
+      @tasks = @tasks.order(created_at: :asc)
+    elsif params[:sort_by] == 'category'
+      @tasks = @tasks.order(category: :asc)
+    end
+  end
 
   # GET /tasks/1 or /tasks/1.json
   def show
