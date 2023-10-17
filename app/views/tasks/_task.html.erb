@@ -1,4 +1,4 @@
-<tr id="<%= dom_id task %>" class="task">
+<tr id="<%= dom_id task %>" class="task <%= task.category %>">
   <td>
     <%= task.created_at.strftime("%m-%d-%Y") %>
   </td>
@@ -24,14 +24,6 @@
       <%= task.is_complete ? 'Complete' : 'Incomplete' %>
     </p>
   </td>
-  <!--
-  <td>
-    <btn class="btn">
-      <%= link_to "Show this task", task %>
-    </btn>
-  </td>
-  -->
-
 
   <td>
     <div style="<%= task.is_complete ? 'visibility: hidden' : 'visibility: visible' %>">

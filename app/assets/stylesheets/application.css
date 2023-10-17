@@ -126,11 +126,11 @@ tbody td:nth-child(9) {
   min-width: 150px;
 }
 
-tbody tr:nth-of-type(even) {
+.task.Work {
   background-color: #F4DFB6;
 }
 
-tbody tr:nth-of-type(odd) {
+.task.Personal {
   background-color: #DE8F5F;
 }
 
@@ -156,7 +156,7 @@ thead tr th {
 
 .form-container {
   width: 100%;
-  padding: 100px 20px 20px 20px;
+  padding: 0px 20px 20px 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -296,8 +296,4 @@ fieldset legend {
 fieldset span {
   display: inline-block;
   margin: 0 10px;
-}
-
-.check_box input[type="checkbox"] {
-  width: 100px;
 }

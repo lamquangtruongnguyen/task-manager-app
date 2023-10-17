@@ -116,14 +116,14 @@ document.getElementById('incomplete').addEventListener('change', function() {
 });
 
 document.getElementById('work').addEventListener('change', function() { /* this and personal aren't working!!! will fix  */
-  var workRows = document.querySelectorAll('.category-Work');
+  var workRows = document.querySelectorAll('.task.Work');
   workRows.forEach(function(row) {
     row.style.display = this.checked ? 'table-row' : 'none';
   }, this);
 });
 
 document.getElementById('personal').addEventListener('change', function() {
-  var personalRows = document.querySelectorAll('.category-Personal');
+  var personalRows = document.querySelectorAll('.task.Personal');
   personalRows.forEach(function(row) {
     row.style.display = this.checked ? 'table-row' : 'none';
   }, this);
