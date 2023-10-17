@@ -7,16 +7,16 @@
     <%= task.name %>
   </td>
 
-  <td>
-    <%= task.category %>
-  </td>
+<td class="<%= task.category %>">
+  <%= task.category %>
+</td>
 
   <td>
     <%= task.description %>
   </td>
 
   <td>
-    <%= task.due_date.strftime("%m-%d-%Y") %>
+    <%= task.due_date&.strftime("%m-%d-%Y") %>
   </td>
 
   <td>
