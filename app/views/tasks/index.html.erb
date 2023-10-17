@@ -11,7 +11,7 @@
 <body>
 
   <div class="tasks-list">
-    <div>
+    <div id="notice">
       <p style="color: green"><%= notice %></p>
     </div>
 
@@ -21,6 +21,7 @@
       <button class="btn" type="button">
         <%= link_to "New Task", new_task_path %>
       </button>
+
 
       <div class="dropdown">
         <button onclick="dropping()" class="dropbtn">Sort</button>
@@ -41,21 +42,21 @@
       </div>
     </div>
 
-<fieldset class="filter-fieldset">
-  <legend>Filter</legend>
+    <fieldset class="filter-fieldset">
+      <legend>Filter</legend>
 
-  <input type="checkbox" id="complete" name="complete" checked/>
-  <span style="width:70px;display:inline-block;">Complete</span>
+      <input type="checkbox" id="complete" name="complete" checked/>
+      <span style="width:70px;display:inline-block;">Complete</span>
 
-  <input type="checkbox" id="incomplete" name="incomplete" checked/>
-  <span style="width:90px;display:inline-block;">Incomplete</span>
+      <input type="checkbox" id="incomplete" name="incomplete" checked/>
+      <span style="width:90px;display:inline-block;">Incomplete</span>
 
-  <input type="checkbox" id="work" name="category" value="Work" checked/>
-  <span style="width:40px;display:inline-block;">Work</span>
+      <input type="checkbox" id="work" name="category" value="Work" checked/>
+      <span style="width:40px;display:inline-block;">Work</span>
 
-  <input type="checkbox" id="personal" name="category" value="Personal" checked/>
-  <span style="width:70px;display:inline-block;">Personal</span>
-</fieldset>
+      <input type="checkbox" id="personal" name="category" value="Personal" checked/>
+      <span style="width:70px;display:inline-block;">Personal</span>
+    </fieldset>
 
 
     <div class="table-wrapper">
@@ -128,6 +129,14 @@ document.getElementById('personal').addEventListener('change', function() {
   }, this);
 });
 
+setTimeout(() => {
+  const notice = document.getElementById("notice");
+  notice.style.display = "none";
+}, 1500);
+
+function confirmDelete(msg) {
+  if (!confirm(msg)) return false;
+}
   </script>
 
 </body>
