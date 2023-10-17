@@ -298,4 +298,6 @@ fieldset span {
   margin: 0 10px;
 }
 
-
+.check_box input[type="checkbox"] {
+  width: 100px;
+}
