@@ -164,6 +164,7 @@ thead tr th {
 
 .form-container h1 {
   margin-bottom: 20px;
+  color: #007298;
 }
 
 .form-container a {
@@ -189,6 +190,7 @@ thead tr th {
   display: inline-block;
   width: 100px;
   color: #fff;
+  font-weight: bold;
 }
 
 .form input, .form select, .form textarea {
