@@ -25,6 +25,8 @@ class TasksController < ApplicationController
       @tasks = @tasks.order(created_at: :asc)
     elsif params[:sort_by] == 'category'
       @tasks = @tasks.order(category: :asc)
+    elsif params[:sort_by] == 'is_complete'
+      @tasks = @tasks.order(is_complete: :asc)
     end
   end
 
