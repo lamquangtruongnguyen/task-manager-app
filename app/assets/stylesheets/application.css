@@ -44,7 +44,7 @@ body {
 
 .tasks-list .header {
   text-align: center;
-  margin: 40px 0 20px 0;
+  margin-bottom: 20px;
   color: #007298;
 }
 
@@ -109,7 +109,7 @@ tbody td:nth-child(5) {
 
 thead th:nth-child(6),
 tbody td:nth-child(6) {
-  min-width: 100px;
+  min-width: 130px;
 }
 
 thead th:nth-child(7),
@@ -298,7 +298,8 @@ fieldset legend {
   padding: 0 10px;
 }
 
-fieldset span {
+fieldset label {
   display: inline-block;
   margin: 0 10px;
+  cursor: pointer;
 }
