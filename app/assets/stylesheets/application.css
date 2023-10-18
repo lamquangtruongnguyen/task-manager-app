@@ -36,10 +36,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.tasks-list, .task-single {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .tasks-list .header {
@@ -284,12 +281,21 @@ thead tr th {
   margin: 10px 0;
 }
 
+.fieldset-container {
+  display: flex;
+  flex-direction: column;
+}
+
 fieldset {
   margin-top: 20px;
   margin-bottom: 40px;
   padding: 10px 20px;
   border-radius: 10px;
   border: 2px solid #007298;
+}
+
+fieldset:last-child {
+  margin-top: 0;
 }
 
 fieldset legend {
@@ -302,4 +308,37 @@ fieldset label {
   display: inline-block;
   margin: 0 10px;
   cursor: pointer;
+}
+
+.legend-fieldset {
+  display: flex;
+}
+
+.legend-fieldset .box-container {
+  display: flex;
+  margin: 0 20px;
+}
+
+.legend-fieldset .box {
+  width: 50px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.box-work {
+  background-color: #dafffb;
+}
+
+.box-personal {
+  background-color: #64ccc5;
+}
+
+@media (min-width: 1025px) {
+  .fieldset-container {
+    flex-direction: row;
+  }
+  fieldset:last-child {
+  margin-top: 20px;
+  margin-left: 40px;
+}
 }
