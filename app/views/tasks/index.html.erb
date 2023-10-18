@@ -38,6 +38,9 @@
           <div class="sort-option">
             <%= link_to 'Sort by Category', tasks_path(sort_by: 'category'), id: 'sortCategoryButton' %>
           </div>
+           <div class="sort-option">
+            <%= link_to 'Sort by Completion', tasks_path(sort_by: 'is_complete'), id: 'sortCompleteButton' %>
+          </div>
         </div>
       </div>
     </div>
@@ -56,6 +59,9 @@
 
       <input type="checkbox" id="personal" name="category" value="Personal" checked/>
       <span style="width:70px;display:inline-block;">Personal</span>
+
+
+
     </fieldset>
 
 
