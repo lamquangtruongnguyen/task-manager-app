@@ -181,6 +181,8 @@ thead tr th {
 
 .form .form-control {
   margin: 20px 0;
+  display: flex;
+  align-items: center;
 }
 
 .form label {
