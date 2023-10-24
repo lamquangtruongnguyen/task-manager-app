@@ -12,5 +12,42 @@
 
   <body>
     <%= yield %>
+    <div style="position: fixed; top: 10%; left: 0; margin-left: 10px; display: flex; flex-direction: column; align-items: center; text-align: center">
+      <h2 style="font-size: 1rem">Dark mode</h2>
+      <div id="toggle">Toggle</div>
+      <h2 style="font-size: 1rem">Zoom</h2>
+      <div id="increase-size">⨁</div>
+      <div id="decrease-size">reset</div>
+    </div>
+    <script>
+      document.getElementById("increase-size").addEventListener('click', function() {
+        var html = document.getElementsByTagName("html")[0];
+        console.log("clicked");
+        html.style.fontSize = "20px";
+      })
+
+      document.getElementById("decrease-size").addEventListener('click', function() {
+        var html = document.getElementsByTagName("html")[0];
+        html.style.fontSize = "16px";
+      })
+
+      var toggle = true;
+      document.getElementById("toggle").addEventListener('click', function() {
+        var body = document.getElementsByTagName("body")[0];
+        var workRow = document.querySelectorAll(".task.Work");
+        var personalRow = document.querySelectorAll(".task.Personal");
+        if (toggle) {
+          body.style.backgroundColor = "#121212";
+          body.style.color = "#fff";
+          workRow.forEach(row => row.style.color = "#405c6e");
+          personalRow.forEach(row => row.style.color = "#405c6e");
+        } else {
+          body.style.backgroundColor = "transparent";
+          body.style.color = "#405c6e";
+        }
+        console.log(toggle);
+        toggle = !toggle;
+      })
+    </script>
   </body>
 </html>

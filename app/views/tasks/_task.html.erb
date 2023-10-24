@@ -15,7 +15,7 @@
     <%= task.description %>
   </td>
 
-  <td style="<%= (task.due_date < DateTime.current.to_date) ? "background-color: #ffc436" : "" %>">
+  <td style="<%= (task.due_date < DateTime.current.to_date && !task.is_complete) ? "background-color: #ffc436" : "" %>">
     <%= task.due_date&.strftime("%m-%d-%Y") %>
   </td>
 

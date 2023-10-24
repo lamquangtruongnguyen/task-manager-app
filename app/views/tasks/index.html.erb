@@ -96,7 +96,6 @@
       </table>
     </div>
   </div>
-
   <script>
     function dropping() {
       document.getElementById("myDropdown").classList.toggle("show");
@@ -145,17 +144,20 @@ document.getElementById('personal').addEventListener('change', function() {
 
 setTimeout(() => {
   const notice = document.getElementById("notice");
+  if (!notice) return;
   notice.style.display = "none";
 }, 2000);
 
 setTimeout(() => {
   const notice = document.getElementById("error_section");
+  if (!notice) return;
   notice.style.display = "none";
 }, 2000);
 
 function confirmDelete(msg) {
   if (!confirm(msg)) return false;
 }
+
   </script>
 
 </body>
